@@ -4,7 +4,7 @@ import { Tasks } from '../../api/tasks.js';
 import { Meteor } from 'meteor/meteor';
 
 import template from './singleChart.html';
-//test github
+//test github2
 class SingleChartCtrl {
   constructor($scope) {
     $scope.viewModel(this);
@@ -19,16 +19,16 @@ class SingleChartCtrl {
 	//this.title = "not working";
 	console.log(this.titlep);
 	console.log(this.datasource);
-	
+
       }
 	  $postLink(){
 		  console.log("jazz postlink");
-		  
+
 		  angular.element(document).ready(function () {
       //  const renderEl = angular.element(renderPlace);
 	//console.log(renderEl);
 	this.setUpHighChart();
-	  
+
     }.bind(this));
 		}
   setUpHighChart(){
@@ -40,10 +40,10 @@ class SingleChartCtrl {
         type: 'datetime'
     },
         series: [{data: this.datasource}]
-    });  
+    });
   }
   setUpChart(){
-	
+
 	var chart = new Taucharts.Chart({
 		data: this.datasource,
 		type: 'line',
@@ -64,7 +64,7 @@ class SingleChartCtrl {
 	chart.renderTo(renderPlace);
     });
 
-	
+
   }//end setupchart
 }
 
