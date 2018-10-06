@@ -4,7 +4,7 @@ import { Tasks } from '../../api/tasks.js';
 import { Meteor } from 'meteor/meteor';
 
 import template from './singleChart.html';
-
+//test github
 class SingleChartCtrl {
   constructor($scope) {
     $scope.viewModel(this);
