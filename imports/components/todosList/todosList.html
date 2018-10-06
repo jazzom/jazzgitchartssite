@@ -1,0 +1,39 @@
+
+<header>
+  <h1>Todo List jazz</h1>
+</header>
+<div class="container">
+<div class="row">
+<div class="col-sm" ng-repeat="chartType in $ctrl.datasourceTypes">
+<single-chart titlep="chartType" datasource="$ctrl.datasourceByType[chartType]"></single-chart>
+ </div>
+ </div>
+ </div>
+ <h3>
+ {{$ctrl.datasource}}
+ </h3>
+ <h1>Todo List ( {{$ctrl.incompleteCount}} )</h1>
+<label class="hide-completed">
+    <input type="checkbox" ng-model="$ctrl.hideCompleted"/>
+    Hide Completed Tasks
+  </label>
+  <login-buttons></login-buttons>
+ 
+  <form class="new-task" ng-submit="$ctrl.addTask($ctrl.newTask)" ng-show="$ctrl.currentUser">
+    <input ng-model="$ctrl.newTask" type="text" name="text" placeholder="Type to add new tasks"/>
+  </form>
+  
+ 
+<ul>
+  
+     <li ng-repeat="task in $ctrl.tasks" >
+     <span ng-if="task.checked">Y&nbsp;</span>
+    <button class="delete" ng-click="$ctrl.removeTask(task)">&times;</button>
+ 
+    <input type="checkbox" ng-checked="task.checked" ng-click="$ctrl.setChecked(task)" class="toggle-checked"/>
+ 
+    <span class="text">
+ 		<strong>{{task.username}}</strong> - {{task.text}}
+    </span>    
+  </li>
+</ul>
